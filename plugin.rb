@@ -3,6 +3,8 @@
 # version: 0.1
 # authors: Coinbase
 
+register_asset "javascripts/initializers/coinbase-tip.js.es6"
+
 register_css <<CSS
 
 .cb-tip-container {
