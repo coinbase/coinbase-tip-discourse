@@ -5,6 +5,14 @@
 
 register_asset "javascripts/initializers/coinbase-tip.js.es6"
 
+after_initialize do
+  load File.expand_path("../controllers/coinbase_controller.rb", __FILE__)
+
+  Discourse::Application.routes.prepend do
+    get 'coinbase/get_tip_id' => 'coinbase#get_tip_id'
+  end
+end
+
 register_css <<CSS
 
 .cb-tip-container {
