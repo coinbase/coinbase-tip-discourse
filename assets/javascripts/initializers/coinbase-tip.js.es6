@@ -8,7 +8,7 @@ export default {
 
     PostMenuView.reopen({
       buttonForTip: function (post, buffer) {
-        var url = document.location.origin + "/t/"+ post.get('topic_id') + "/" + post.get('id');
+        var url = document.location.origin + post.get('url');
         var cb_id = 'coinbase'; //effectively nobody if we can't find an ID or username
 
         function makeAjaxCall () {
@@ -31,5 +31,5 @@ export default {
         });
       }
     });
-  } 
-}; 
+  }
+};
