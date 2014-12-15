@@ -8,8 +8,6 @@ class ::CoinbaseController < ::ApplicationController
       cb_id = u.custom_fields["coinbase_username"]
     elsif u.single_sign_on_record != nil
       cb_id = u.single_sign_on_record["external_id"]
-    else
-      cb_id = 'coinbase'
     end
 
     render json: { cb_id: cb_id }
