@@ -31,17 +31,19 @@ export default {
 
         makeAjaxCall().then(function (result) {
           cb_id = result["cb_id"];
-          $('.cb-tip-button-ph-' + post.get('id'))
-            .replaceWith('<div class="cb-tip-button" \
-              data-content-location=' + url
-              + ' data-href="//www.coinbase.com/tip_buttons/show_tip" \
-              data-to-user-id=' + cb_id
-              + ' data-src="discourse-plugin"></div><script>!function(d,s,id) \
-              {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);\
-                if(e){return;}js=d.createElement(s);js.id=id;\
-                js.src="https://www.coinbase.com/assets/tips.js";\
-                cjs.parentNode.insertBefore(js,cjs);\
-              }(document, \'script\', \'coinbase-tips\');</script>');
+          if (cb_id != "coinbase"){
+            $('.cb-tip-button-ph-' + post.get('id'))
+              .replaceWith('<div class="cb-tip-button" \
+                data-content-location=' + url
+                + ' data-href="//www.coinbase.com/tip_buttons/show_tip" \
+                data-to-user-id=' + cb_id
+                + ' data-src="discourse-plugin"></div><script>!function(d,s,id) \
+                {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);\
+                  if(e){return;}js=d.createElement(s);js.id=id;\
+                  js.src="https://www.coinbase.com/assets/tips.js";\
+                  cjs.parentNode.insertBefore(js,cjs);\
+                }(document, \'script\', \'coinbase-tips\');</script>');
+          }
         });
         return btn;
       }
