@@ -4,15 +4,19 @@ class ::CoinbaseController < ::ApplicationController
     u = User.find_by(id: params[:id])
     f = UserField.find_by(name: "Coinbase Username")
 
-    cb_id = 'coinbase'
-
-    if u.user_fields["#{f.id}"] != nil
-      cb_id = u.user_fields["#{f.id}"]
-    elsif u.single_sign_on_record != nil
-      cb_id = u.single_sign_on_record["external_id"]
+    if u.user_fields["#{f.id}"].present?
+      render json: { cb_id: u.user_fields["#{f.id}"] } and return
     end
 
-    render json: { cb_id: cb_id }
+    s = SiteSetting.where(name: "sso_url")
+
+    if !s.blank? && s.first.value.match(/^https:\/\/www.coinbase.com\//)
+      if u.single_sign_on_record != nil
+        render json: { cb_id: u.single_sign_on_record["external_id"] } and return
+      end
+    end
+
+    render json: { cb_id: 'coinbase' }
   end
 
 end
