@@ -19,8 +19,12 @@ register_css <<CSS
   z-index: auto;
 }
 
-.actions {
-  opacity: 0.95;
+.cb-tip-button {
+  margin-right: 70px;
+  margin-left: 3px;
+  display: inline-block;
+  padding: 8px 10px;
+  text-align: left;
 }
 
 CSS
