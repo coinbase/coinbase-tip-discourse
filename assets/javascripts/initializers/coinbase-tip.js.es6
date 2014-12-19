@@ -16,9 +16,8 @@ export default {
 
         // Create a button as a placeholder until we can make the real button
         var btn = new Button("tip", "Tip post", "", {
-          className: "cb-tip-container",
-          disabled: true,
-          innerHTML: '<div class="cb-tip-button-ph-' + post.get('id') + '" ></div>'
+          className: "cb-tip-container-" + post.get('id'),
+          disabled: true
         });
 
         function makeAjaxCall () {
@@ -32,7 +31,7 @@ export default {
         makeAjaxCall().then(function (result) {
           cb_id = result["cb_id"];
           if (cb_id != "coinbase"){
-            $('.cb-tip-button-ph-' + post.get('id'))
+            $('.cb-tip-container-' + post.get('id'))
               .replaceWith('<div class="cb-tip-button" \
                 data-content-location=' + url
                 + ' data-href="//www.coinbase.com/tip_buttons/show_tip" \

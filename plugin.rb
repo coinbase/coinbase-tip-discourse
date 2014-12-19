@@ -15,10 +15,12 @@ end
 
 register_css <<CSS
 
-.cb-tip-container {
-  background:none!important;
-  border: 2px outset buttonface; 
-  margin-right: 70px!important;
+.topic-body {
+  z-index: auto;
+}
+
+.actions {
+  opacity: 0.95;
 }
 
 CSS
