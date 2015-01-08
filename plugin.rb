@@ -24,7 +24,7 @@ register_css <<CSS
   display: inline-block;
   text-align: left;
   padding-top: 8px;
-  z-index: 1;
+  z-index: 501;
   position: relative;
 }
 
