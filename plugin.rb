@@ -20,11 +20,12 @@ register_css <<CSS
 }
 
 .cb-tip-button {
-  margin-right: 70px;
-  margin-left: 3px;
+  margin-right: auto;
   display: inline-block;
-  padding: 8px 10px;
   text-align: left;
+  padding-top: 8px;
+  z-index: 1;
+  position: relative;
 }
 
 CSS
