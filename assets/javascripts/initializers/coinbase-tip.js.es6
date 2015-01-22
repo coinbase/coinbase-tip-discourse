@@ -21,7 +21,7 @@ export default {
         });
 
         function makeAjaxCall () {
-          return Discourse.ajax("/coinbase/get_tip_id", {
+          return Discourse.ajax("/coinbase/tip_id", {
             dataType: 'json',
             data: { id: post.get('user_id') },
             type: 'GET'
