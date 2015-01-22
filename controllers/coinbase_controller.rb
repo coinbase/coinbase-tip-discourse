@@ -5,7 +5,7 @@ class ::CoinbaseController < ::ApplicationController
     f = UserField.find_by(name: "Coinbase Username")
 
     if u.user_fields["#{f.id}"].present?
-      render json: { cb_id: u.user_fields["#{f.id}"] } and return
+      render json: { cb_id: ERB::Util.html_escape(u.user_fields["#{f.id}"]) } and return
     end
 
     s = SiteSetting.where(name: "sso_url")
