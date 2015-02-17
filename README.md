@@ -6,7 +6,7 @@ A [Discourse](http://discourse.org) plugin to embed a [Coinbase tip](https://www
 Installation
 ============
 
-* Run `rake plugin:install repo=http://github.com/jsorchik/coinbase-tip-discourse` in your discourse directory
+* Run `rake plugin:install repo=http://github.com/coinbase/coinbase-tip-discourse` in your discourse directory
 * In development mode, run `rake assets:clean`
 * In production, recompile your assets: `rake assets:precompile`
 
